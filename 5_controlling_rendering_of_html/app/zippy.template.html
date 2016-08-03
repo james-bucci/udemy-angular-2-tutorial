@@ -1,0 +1,16 @@
+<div class="zip">
+  <div class="zip-title" (click)="toggleExpand()">
+    {{title}}
+    <i
+      class="glyphicon pull-right"
+      [ngClass]="{
+        'glyphicon-chevron-down':!isExpanded,
+        'glyphicon-chevron-up':isExpanded
+      }"
+    ></i>
+  </div>
+  <div class="zip-content" *ngIf="isExpanded">
+    <ng-content></ng-content>
+  </div>
+  <!-- ng-class -->
+</div>
