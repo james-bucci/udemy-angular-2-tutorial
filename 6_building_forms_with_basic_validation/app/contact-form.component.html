@@ -1,0 +1,34 @@
+<form #f="ngForm" (ngSubmit)="onSubmit(f.form)">
+  <div class="form-group">
+    <label for="firstName">First Name</label>
+    <input
+      ngControl="firstName"
+      #firstName="ngForm"
+      (change)="log(firstName)"
+      id="firstName"
+      type="text"
+      class="form-control"
+      required
+      minlength="3"
+    >
+    <!-- .valid -->
+    <div *ngIf="firstName.touched && firstName.errors">
+      <!-- {{ firstName.errors | json }} -->
+      <div *ngIf="firstName.errors.required" class="alert alert-danger">First name is required.</div>
+      <div *ngIf="firstName.errors.minlength" class="alert alert-danger">First name should be {{ firstName.errors.minlength.requiredLength }} chars.</div>
+    </div>
+    <!-- # is a temp local var -> for (change) -->
+  </div>
+  <div class="form-group">
+    <label for="comment">Comment</label>
+    <textarea
+      ngControl="comment"
+      #comment="ngForm"
+      id="comment" cols="30" rows="10" class="form-control"
+      required
+    ></textarea>
+    <div *ngIf="comment.touched && !comment.valid" class="alert alert-danger">Comment is required.</div>
+  </div>
+  <!-- note disabled isnt quite protecting all use cases -->
+  <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Submit</button>
+</form>
