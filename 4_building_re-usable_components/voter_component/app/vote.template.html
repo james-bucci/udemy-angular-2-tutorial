@@ -1,0 +1,13 @@
+<div>
+  <i
+    class="glyphicon glyphicon-menu-up"
+    [class.orange]="isUp"
+    (click)="upVote($event)"
+  ></i>
+  <p>{{ count }}</p>
+  <i
+    class="glyphicon glyphicon-menu-down"
+    [class.orange]="isDown"
+    (click)="downVote($event)"
+  ></i>
+</div>

@@ -20,15 +20,26 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         execute: function() {
             StarComponent = (function () {
                 function StarComponent() {
-                    this.isFull = true;
+                    this.change = new core_1.EventEmitter();
                 }
                 StarComponent.prototype.onClick = function ($event) {
-                    this.isFull = !this.isFull;
+                    this.isFav = !this.isFav;
+                    this.change.emit({ newValue: this.isFav });
                 };
+                __decorate([
+                    core_1.Input(), 
+                    __metadata('design:type', Object)
+                ], StarComponent.prototype, "isFav", void 0);
+                __decorate([
+                    //changes private prop to input prop
+                    core_1.Output(), 
+                    __metadata('design:type', Object)
+                ], StarComponent.prototype, "change", void 0);
                 StarComponent = __decorate([
                     core_1.Component({
                         selector: 'star',
-                        template: "\n    <i\n      class=\"glyphicon\"\n      [class.glyphicon-star]=\"isFull\"\n      [class.glyphicon-star-empty]=\"!isFull\"\n      (click)=\"onClick($event)\"\n    ></i>\n  "
+                        templateUrl: 'app/star.template.html',
+                        styles: ["\n    .glyphicon-star {\n      color: orange\n    }\n  "]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], StarComponent);
