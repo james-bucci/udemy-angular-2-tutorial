@@ -1,0 +1,23 @@
+<h1>GitHub</h1>
+<form [ngFormModel]="form">
+  <input type=“text” [(ngModel)]="username" ngControl="search">
+</form>
+<div *ngIf="!isLoading">
+  <a href="{{user.html_url}}">
+    <h3>@{{username}}</h3>
+    <img class="avatar" src="{{user.avatar_url}}" alt="{{username}}">
+  </a>
+  <h3>Followers</h3>
+  <div *ngFor="#follower of followers">
+    <div class="media">
+      <div class="media-left">
+        <a href="{{follower.html_url}}">
+          <img class="media-object avatar" src="{{follower.avatar_url}}" alt="{{follower.login}}">
+        </a>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading">@{{follower.login}}</h4>
+      </div>
+    </div>
+  </div>
+</div>
