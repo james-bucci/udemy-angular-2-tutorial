@@ -1,7 +1,7 @@
-import {Component, OnInit} from 'angular2/core';
-import {ControlGroup, FormBuilder, Validators} from 'angular2/common'
-import {HTTP_PROVIDERS} from 'angular2/http'
-import {ROUTER_DIRECTIVES, Router, CanDeactivate, RouteParams} from 'angular2/router'
+import {Component, OnInit} from '@angular/core';
+import {ControlGroup, FormBuilder, Validators} from '@angular/common'
+import {HTTP_PROVIDERS} from '@angular/http'
+import {ROUTER_DIRECTIVES, Router, CanDeactivate, RouteParams} from '@angular/router-deprecated'
 
 import {EmailValidators} from '../validators/emailValidators';
 import {UsersService} from './users.service';

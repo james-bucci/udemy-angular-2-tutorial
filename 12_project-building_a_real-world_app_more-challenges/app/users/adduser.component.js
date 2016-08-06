@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/common', 'angular2/http', 'angular2/router', '../validators/emailValidators', './users.service', './user'], function(exports_1, context_1) {
+System.register(['@angular/core', '@angular/common', '@angular/http', '@angular/router-deprecated', '../validators/emailValidators', './users.service', './user'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/common', 'angular2/http', 'angular2/
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, common_1, http_1, router_1, emailValidators_1, users_service_1, user_1;
+    var core_1, common_1, http_1, router_deprecated_1, emailValidators_1, users_service_1, user_1;
     var AddUserComponent;
     return {
         setters:[
@@ -23,8 +23,8 @@ System.register(['angular2/core', 'angular2/common', 'angular2/http', 'angular2/
             function (http_1_1) {
                 http_1 = http_1_1;
             },
-            function (router_1_1) {
-                router_1 = router_1_1;
+            function (router_deprecated_1_1) {
+                router_deprecated_1 = router_deprecated_1_1;
             },
             function (emailValidators_1_1) {
                 emailValidators_1 = emailValidators_1_1;
@@ -96,10 +96,10 @@ System.register(['angular2/core', 'angular2/common', 'angular2/http', 'angular2/
                 AddUserComponent = __decorate([
                     core_1.Component({
                         templateUrl: '/app/users/adduser.component.html',
-                        directives: [router_1.ROUTER_DIRECTIVES],
+                        directives: [router_deprecated_1.ROUTER_DIRECTIVES],
                         providers: [users_service_1.UsersService, http_1.HTTP_PROVIDERS]
                     }), 
-                    __metadata('design:paramtypes', [common_1.FormBuilder, router_1.Router, router_1.RouteParams, users_service_1.UsersService])
+                    __metadata('design:paramtypes', [common_1.FormBuilder, router_deprecated_1.Router, router_deprecated_1.RouteParams, users_service_1.UsersService])
                 ], AddUserComponent);
                 return AddUserComponent;
             }());
